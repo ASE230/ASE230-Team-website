@@ -125,7 +125,7 @@ $data = [
       ],
     ]
     ],
-      "Ethan" => [
+  "Ethan" => [
     "general" => [
       "name" => "Ethan Fossmeyer",
       "title" => "Full-Stack Software Engineer",
