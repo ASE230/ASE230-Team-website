@@ -35,7 +35,8 @@
 						<div class="row p-4 justify-content-center justify-content-md-between">
 							<div class="primary-info col-auto">
 								<h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase"><?= $person['general']['name'] ?></h1>
-								<div class="title mb-3"><?= $person['general']['title'] ?></div>
+								<div class="title mb-1"><?= $person['general']['title'] ?></div>
+								<div class="mb-2"><?= memberAge($person['general']['dob']) . " years old" ?></div>
 								<ul class="list-unstyled">
 									<li class="mb-2"><a class="text-link" href="mailto:<?= $person['general']['email'] ?>"><i class="far fa-envelope fa-fw me-2" data-fa-transform="grow-3"></i><?= $person['general']['email'] ?></a></li>
 									<li><a class="text-link" href="tel:<?= $person['general']['phone'] ?>"><i class="fas fa-mobile-alt fa-fw me-2" data-fa-transform="grow-6"></i><?= $person['general']['phone'] ?></a></li>
