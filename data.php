@@ -128,6 +128,7 @@ $data = [
   "Ethan" => [
     "general" => [
       "name" => "Ethan Fossmeyer",
+      "dob" => "",
       "title" => "Full-Stack Software Engineer",
       "email" => "fossmeyere1@mymail.nku.edu",
       "phone" => "+1 (859) 630-7752",
