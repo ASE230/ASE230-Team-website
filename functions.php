@@ -1,6 +1,12 @@
 <?php
-    function memberAge() {
+    function memberAge($dateOfBirth) {
+        $dob = new DateTime($dateOfBirth);
+        $currentDate = new DateTime();
+        $ageInterval = $currentDate->diff($dob);
 
+        $age = $ageInterval->y + ($ageInterval->m / 12) + ($ageInterval->d / 365); //fun little decimal points for age
+        $roundedAge = round($age, 4);
+        return $roundedAge;
     }
 
     function displayCard($person, $name) {
@@ -17,7 +23,8 @@
                             <h1 class='name mt-0 mb-1 text-white text-uppercase text-uppercase'>
                                 {$person['general']['name']}
                             </h1>
-                            <div class='title mb-3'>{$person['general']['title']}</div>
+                            <div class='title mb-1'>{$person['general']['title']}</div>
+                            <div class='title mb-3'>" . memberAge($person['general']['dob']) . " years old</div>
                             <a href='./detail.php?person=$name' class='btn btn-secondary'>See full profile</a>
                         </div>
                         <div class='secondary-info col-auto mt-2'>
