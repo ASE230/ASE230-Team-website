@@ -1,5 +1,6 @@
 <?php
 	require_once('./data.php');
+	require_once('./functions.php');
 
 	$name = $_GET['person'];
 	$person = $data[$name];
@@ -68,34 +69,7 @@
 							<div class="resume-section-content">
 								<div class="resume-timeline position-relative">
 									<?php foreach ($person['experiences'] as $experience) { ?>
-										<article class="resume-timeline-item position-relative pb-5">
-											<div class="resume-timeline-item-header mb-2">
-												<div class="d-flex flex-column flex-md-row">
-													<h3 class="resume-position-title font-weight-bold mb-1"><?= $experience['position'] ?></h3>
-													<div class="resume-company-name ms-auto"><?= $experience['company'] ?></div>
-												</div>
-												<div class="resume-position-time"><?= $experience['timeline'] ?></div>
-											</div>
-											<div class="resume-timeline-item-desc">
-												<p><?= $experience['description'] ?></p>
-												<?php if (count($experience["achievements"]) > 0) { ?>
-													<h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements:</h4>
-												<?php } ?>
-												<ul>
-													<?php foreach ($experience["achievements"] as $achievement) { ?>
-														<li><?= $achievement ?></li>
-													<?php } ?>
-												</ul>
-												<?php if (count($experience['tech']) > 0) { ?>
-													<h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
-												<?php } ?>
-												<ul class="list-inline">
-													<?php foreach ($experience['tech'] as $tech) { ?>
-														<li class="list-inline-item"><span class="badge bg-secondary badge-pill"><?= $tech ?></span></li>
-													<?php } ?>
-												</ul>
-											</div>
-										</article>
+										<?= displayExperience($experience) ?>
 									<?php } ?>
 								</div>
 							</div>
